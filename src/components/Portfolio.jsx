@@ -12,7 +12,7 @@ const projects = [
     date: "2026",
     services: "React, Next.js, Node.js, Express, MongoDB, Redis",
     budget: "Company Project",
-    image: "../../image/project1.jfif",
+    image: "/image/project1.jfif",
     description:
       "A modern e-commerce web application where I worked on responsive user interfaces, reusable React components, REST API integration, shopping cart functionality, and backend features using Node.js and MongoDB.",
     strategy:
@@ -34,7 +34,7 @@ const projects = [
     date: "2026",
     services: "React, Node.js, Express, MongoDB, AWS",
     budget: "Company Project",
-    image: "../../image/project2.jfif",
+    image: "/image/project2.jfif",
     description:
       "A real estate platform where users can browse property listings and administrators manage properties through a dashboard. I contributed to frontend development, REST APIs, and cloud deployment support.",
     strategy:
@@ -56,7 +56,7 @@ const projects = [
     date: "2025",
     services: "React, Node.js, Express",
     budget: "Company Project",
-    image: "../../image/project3.jfif",
+    image: "/image/project3.jfif",
     description:
       "A healthcare website for doctors and clinics featuring appointment-related pages, responsive UI, and backend API development for a better patient experience.",
     strategy:
