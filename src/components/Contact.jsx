@@ -30,7 +30,7 @@ const Contact = () => {
     setStatus({ type: "", message: "" });
 
     try {
-      const res = await fetch("https://localhost:8080/send-mail", {
+      const res = await fetch("https://jatin-portfolio-server.vercel.app/send-mail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
