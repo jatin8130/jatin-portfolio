@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { ArrowRight } from "lucide-react";
 
 const tabs = ["Education", "Professional Skills", "Experience", "Interview"];
 
@@ -137,29 +136,21 @@ const TimelineCard = ({ item }) => (
       style={{
         background: "linear-gradient(145deg, #ECF0F3 0%, #ECF0F3 100%)",
       }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.background =
-          "linear-gradient(145deg, #7B6FE8 0%, #9A61C0 35%, #C96F9D 70%, #F36A7A 100%)";
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.background =
-          "linear-gradient(145deg, #ECF0F3 0%, #ECF0F3 100%)";
-      }}
     >
       {/* Year */}
-      <p className="uppercase tracking-[3px] text-pink-500 text-xs md:text-sm mb-3 group-hover:text-pink-100 transition-colors duration-500">
+      <p className="uppercase tracking-[3px] text-pink-500 text-xs md:text-sm mb-3">
         {item.year}
       </p>
 
       <div className="flex justify-between items-start gap-3">
         <div>
           {/* Title */}
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 group-hover:text-white transition-colors duration-500">
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800">
             {item.title}
           </h3>
 
           {/* Organization */}
-          <p className="text-gray-600 mt-1 text-sm md:text-base group-hover:text-white transition-colors duration-500">
+          <p className="text-gray-600 mt-1 text-sm md:text-base">
             {item.org}
           </p>
         </div>
@@ -169,7 +160,6 @@ const TimelineCard = ({ item }) => (
           className="px-3 py-1 rounded-xl text-xs md:text-sm font-semibold whitespace-nowrap
           bg-[#ECF0F3] text-pink-500
           shadow-[4px_4px_10px_#c8d0e7,-4px_-4px_10px_#ffffff]
-          group-hover:bg-white group-hover:text-[#DD2A7B]
           transition-all duration-500"
         >
           {item.badge}
@@ -177,20 +167,12 @@ const TimelineCard = ({ item }) => (
       </div>
 
       {/* Divider */}
-      <hr className="my-5 border-gray-300 group-hover:border-white/30 transition-colors duration-500" />
+      <hr className="my-5 border-gray-300 transition-colors duration-500" />
 
       {/* Description */}
-      <p className="text-gray-600 leading-7 text-sm md:text-base group-hover:text-white transition-colors duration-500">
+      <p className="text-gray-600 leading-7 text-sm md:text-base">
         {item.desc}
       </p>
-
-      {/* Bottom Arrow */}
-      <div className="mt-6 opacity-0 group-hover:opacity-100 transition-all duration-500">
-        <ArrowRight
-          size={22}
-          className="text-white group-hover:translate-x-1 transition-transform duration-300"
-        />
-      </div>
     </div>
   </div>
 );
