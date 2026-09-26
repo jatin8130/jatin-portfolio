@@ -1,212 +1,216 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
-import { ArrowRight } from "lucide-react";
+import {
+  Building2,
+  GraduationCap,
+  Briefcase,
+  ArrowUpRight,
+} from "lucide-react";
 
-const tabs = ["Education", "Professional Skills", "Experience", "Interview"];
+const tabs = ["Experience", "Professional Skills", "Education"];
 
-const educationLeft = [
-  {
-    year: "2020",
-    title: "10th Standard",
-    org: "CBSE Board",
-    badge: "Completed",
-    desc: "Completed secondary education in 2020 with a strong foundation before pursuing Computer Science.",
-  },
-  {
-    year: "2020 - 2024",
-    title: "Diploma in Computer Science",
-    org: "Board of Technical Education",
-    badge: "Completed",
-    desc: "Studied Data Structures, DBMS, Networking, Web Development and Software Engineering while building practical programming projects.",
-  },
-];
-
-const educationRight = [
-  {
-    year: "Sep 2024 - Nov 2026",
-    title: "Full Stack Developer",
-    org: "Techsunset (Remote)",
-    badge: "2Y 2M",
-    desc: "Worked remotely as a Full Stack Developer building production-ready web applications using modern JavaScript technologies.",
-  },
-];
-
-const designSkills = [
-  { name: "UI Design", value: 78 },
-  { name: "Responsive Design", value: 75 },
-  { name: "Tailwind CSS", value: 76 },
-  { name: "Component Design", value: 72 },
-];
-
-const devSkills = [
-  { name: "React.js", value: 78 },
-  { name: "Next.js", value: 72 },
-  { name: "Node.js", value: 76 },
-  { name: "Express.js", value: 74 },
-  { name: "MongoDB", value: 73 },
-  { name: "Redis", value: 66 },
-  { name: "AWS (6 Months)", value: 60 },
-  { name: "Git", value: 72 },
-];
+/* ---------------------- EXPERIENCE ---------------------- */
 
 const experienceLeft = [
   {
-    year: "09 Sep 2024 - 12 Nov 2026",
+    year: "Sep 2024 – Feb 2027",
     title: "Full Stack Developer",
     org: "Techsunset (Remote)",
-    badge: "2Y 2M",
-    desc: "Built responsive user interfaces using React and Next.js, developed REST APIs with Node.js and Express, managed MongoDB databases, integrated Redis where required, and worked with AWS services including EC2, S3 and Lambda.",
+    desc: "Built responsive React and Next.js applications, developed REST APIs with Node.js and Express, worked with MongoDB, Redis, AWS EC2, S3 and Lambda while contributing to production-ready client projects.",
   },
 ];
 
 const experienceRight = [
   {
-    year: "Company Projects",
-    title: "Service-Based Projects",
+    year: "Production Projects",
+    title: "Project Categories",
     org: "Techsunset",
-    badge: "Production",
-    desc: "Worked on E-commerce, Real Estate and Healthcare web applications while collaborating with team members to deliver production-ready solutions.",
+    desc: "Worked on E-commerce, Real Estate and Healthcare web applications while collaborating with cross-functional teams to deliver scalable client solutions.",
   },
 ];
 
-const interviewLeft = [
+/* ---------------------- EDUCATION ---------------------- */
+
+const educationLeft = [
   {
-    year: "Latest Project",
-    title: "ProFlowers Booking Platform",
-    org: "Team Project",
-    badge: "Production",
-    desc: "Contributed to the admin panel UI and developed REST APIs for a flower booking platform while working as part of a development team.",
+    year: "2020 – 2024",
+    title: "Diploma in Computer Science",
+    org: "Board of Technical Education",
+    desc: "Studied Data Structures, DBMS, Networking, Web Development and Software Engineering while building practical development projects.",
   },
-];
-
-const interviewRight = [
   {
-    year: "Professional Growth",
-    title: "Problem Solving",
-    org: "Node.js Development",
-    badge: "Experience",
-    desc: "Resolved dependency and deprecation-related issues during backend development while maintaining application functionality and improving project stability.",
+    year: "2020",
+    title: "10th Standard",
+    org: "CBSE Board",
+    desc: "Completed secondary education before pursuing Computer Science.",
   },
 ];
 
-const Progress = ({ name, value }) => {
-  const [width, setWidth] = useState(0);
+const educationRight = [
+  {
+    year: "2024 – Present",
+    title: "Professional Journey",
+    org: "Techsunset (Remote)",
+    desc: "Started my professional journey as a Remote Full Stack Developer working on production-ready client applications using modern JavaScript technologies.",
+  },
+];
 
-  useEffect(() => {
-    const timer = setTimeout(() => setWidth(value), 150);
-    return () => clearTimeout(timer);
-  }, [value]);
+/* ---------------------- SKILLS ---------------------- */
 
-  return (
-    <div className="mb-7">
-      <div className="flex justify-between mb-3 uppercase tracking-[2px] text-xs md:text-sm text-gray-700">
-        <span>{name}</span>
-        <span>{value}%</span>
-      </div>
+const technologies = [
+  {
+    name: "Gen AI",
+    icon: "/image/ai.png",
+    skills: ["AI", "Prompts", "Automation"],
+  },
+  {
+    name: "JavaScript",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    skills: ["ES6+", "Async", "DOM"],
+  },
+  {
+    name: "React",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    skills: ["Hooks", "State", "UI"],
+  },
+  {
+    name: "Tailwind",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+    skills: ["Responsive", "Design", "Animation"],
+  },
+  {
+    name: "Next.js",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+    skills: ["SSR", "Routing", "API"],
+  },
+  {
+    name: "Node.js",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+    skills: ["REST", "Backend", "Logic"],
+  },
+  {
+    name: "Express",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+    skills: ["Routes", "Auth", "Middleware"],
+  },
+  {
+    name: "CI/CD",
+    icon: "https://cdn.simpleicons.org/githubactions/2088FF",
+    skills: ["Deploy", "Pipeline", "Actions"],
+  },
+  {
+    name: "MongoDB",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+    skills: ["CRUD", "Index", "Aggregation"],
+  },
+  {
+    name: "PostgreSQL",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+    skills: ["SQL", "Relations", "Queries"],
+  },
+  {
+    name: "Prisma",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg",
+    skills: ["Schema", "Migration", "ORM"],
+  },
+  {
+    name: "Docker",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+    skills: ["Container", "Image", "Deploy"],
+  },
+  {
+    name: "AWS",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+    skills: ["EC2", "S3", "Lambda"],
+  },
+  {
+    name: "Redis",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg",
+    skills: ["Cache", "Session", "Queue"],
+  },
+  {
+    name: "Kafka",
+    icon: "https://cdn.simpleicons.org/apachekafka/000000",
+    skills: ["Events", "Stream", "Queue"],
+  },
+  {
+    name: "RabbitMQ",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rabbitmq/rabbitmq-original.svg",
+    skills: ["Worker", "Queue", "Async"],
+  },
+  {
+    name: "BullMQ",
+    icon: "https://cdn.simpleicons.org/redux/764ABC",
+    skills: ["Jobs", "Queue", "Schedule"],
+  },
+];
 
-      <div className="h-3 rounded-full bg-gray-300 overflow-hidden">
-        <div
-          className="h-full rounded-full bg-gradient-to-r from-pink-300 to-pink-600 transition-all duration-1000"
-          style={{ width: `${width}%` }}
-        />
-      </div>
+/* ---------------------- TIMELINE CARD ---------------------- */
+
+const TimelineCard = ({ item, type }) => (
+  <div className="relative pl-9">
+    {/* Gradient Line */}
+    <div className="absolute left-3 top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#FF014F] via-pink-300 to-gray-300 rounded-full"></div>
+
+    {/* Node */}
+    <div className="absolute left-0 top-7 w-7 h-7 rounded-full bg-[#ECF0F3] shadow-[4px_4px_10px_#c8d0e7,-4px_-4px_10px_#ffffff] flex items-center justify-center">
+      {type === "experience" ? (
+        <Briefcase size={14} color="#FF014F" />
+      ) : (
+        <GraduationCap size={14} color="#FF014F" />
+      )}
     </div>
-  );
-};
-
-Progress.propTypes = {
-  name: PropTypes.string.isRequired,
-  value: PropTypes.number.isRequired,
-};
-
-const TimelineCard = ({ item }) => (
-  <div className="relative pl-8 md:pl-12">
-    {/* Timeline Line */}
-    <div className="absolute left-0 top-0 h-full border-l-4 border-gray-300"></div>
-
-    {/* Timeline Dot */}
-    <div className="absolute left-[-10px] top-10 w-5 h-5 rounded-full border-[5px] border-gray-300 bg-[#ECF0F3]"></div>
 
     {/* Card */}
     <div
-      className="group rounded-[22px] p-5 md:p-8
-      bg-[#ECF0F3]
-      shadow-[8px_8px_20px_#c8d0e7,-8px_-8px_20px_#ffffff]
-      hover:-translate-y-2
+      className="group relative rounded-[24px] bg-[#ECF0F3] p-5
+      shadow-[8px_8px_18px_#c8d0e7,-8px_-8px_18px_#ffffff]
+      hover:-translate-y-2 hover:shadow-[12px_12px_24px_#c8d0e7,-12px_-12px_24px_#ffffff]
       transition-all duration-500"
-      style={{
-        background: "linear-gradient(145deg, #ECF0F3 0%, #ECF0F3 100%)",
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.background =
-          "linear-gradient(145deg, #7B6FE8 0%, #9A61C0 35%, #C96F9D 70%, #F36A7A 100%)";
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.background =
-          "linear-gradient(145deg, #ECF0F3 0%, #ECF0F3 100%)";
-      }}
     >
-      {/* Year */}
-      <p className="uppercase tracking-[3px] text-pink-500 text-xs md:text-sm mb-3 group-hover:text-pink-100 transition-colors duration-500">
+      {/* Year Badge */}
+      <span className="absolute -top-3 right-5 px-4 py-1.5 rounded-full bg-[#FF014F] text-white text-[11px] font-bold uppercase tracking-[2px] shadow-lg">
         {item.year}
-      </p>
+      </span>
 
-      <div className="flex justify-between items-start gap-3">
-        <div>
-          {/* Title */}
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 group-hover:text-white transition-colors duration-500">
-            {item.title}
-          </h3>
+      <h3 className="text-lg md:text-xl font-bold text-[#1E2125] mt-3 group-hover:text-[#FF014F] transition-colors">
+        {item.title}
+      </h3>
 
-          {/* Organization */}
-          <p className="text-gray-600 mt-1 text-sm md:text-base group-hover:text-white transition-colors duration-500">
-            {item.org}
-          </p>
-        </div>
-
-        {/* Badge */}
-        <span
-          className="px-3 py-1 rounded-xl text-xs md:text-sm font-semibold whitespace-nowrap
-          bg-[#ECF0F3] text-pink-500
-          shadow-[4px_4px_10px_#c8d0e7,-4px_-4px_10px_#ffffff]
-          group-hover:bg-white group-hover:text-[#DD2A7B]
-          transition-all duration-500"
-        >
-          {item.badge}
-        </span>
+      <div className="flex items-center gap-2 mt-2 text-gray-500 text-sm">
+        <Building2 size={15} />
+        {item.org}
       </div>
 
-      {/* Divider */}
-      <hr className="my-5 border-gray-300 group-hover:border-white/30 transition-colors duration-500" />
+      <p className="mt-5 text-gray-600 text-[14px] leading-7">{item.desc}</p>
 
-      {/* Description */}
-      <p className="text-gray-600 leading-7 text-sm md:text-base group-hover:text-white transition-colors duration-500">
-        {item.desc}
-      </p>
+      <div className="flex justify-between items-center mt-5 pt-4 border-t border-gray-300">
+        <span className="text-[11px] uppercase tracking-[2px] text-gray-500">
+          Professional Milestone
+        </span>
 
-      {/* Bottom Arrow */}
-      <div className="mt-6 opacity-0 group-hover:opacity-100 transition-all duration-500">
-        <ArrowRight
-          size={22}
-          className="text-white group-hover:translate-x-1 transition-transform duration-300"
-        />
+        <div className="w-10 h-10 rounded-full bg-[#ECF0F3] shadow-[4px_4px_10px_#c8d0e7,-4px_-4px_10px_#ffffff] flex items-center justify-center group-hover:bg-[#FF014F] transition-all duration-300">
+          <ArrowUpRight size={18} className="group-hover:text-white transition-colors" />
+        </div>
       </div>
     </div>
   </div>
 );
 
 TimelineCard.propTypes = {
+  type: PropTypes.string.isRequired,
   item: PropTypes.shape({
     year: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     org: PropTypes.string.isRequired,
-    badge: PropTypes.string.isRequired,
     desc: PropTypes.string.isRequired,
   }).isRequired,
 };
 
+/* ---------------------- MAIN ---------------------- */
+
 export default function Resume() {
-  const [active, setActive] = useState("Education");
+  const [active, setActive] = useState("Experience");
 
   const renderTimeline = (
     leftTitle,
@@ -214,35 +218,38 @@ export default function Resume() {
     leftData,
     rightData,
     leftYear,
-    rightYear
+    rightYear,
+    type
   ) => (
-    <div className="grid lg:grid-cols-2 gap-12 mt-12 md:mt-20">
+    <div className="grid lg:grid-cols-2 gap-10 mt-8">
       <div>
-        <p className="uppercase tracking-[4px] text-pink-500 text-xs md:text-sm mb-4">
+        <p className="uppercase tracking-[4px] text-[#FF014F] text-xs font-semibold mb-2">
           {leftYear}
         </p>
-        <h3 className="text-3xl md:text-5xl font-bold text-gray-800 mb-10 md:mb-12">
+
+        <h3 className="text-2xl md:text-3xl font-bold text-[#1E2125] mb-8">
           {leftTitle}
         </h3>
 
-        <div className="space-y-10 md:space-y-12">
+        <div className="space-y-8">
           {leftData.map((item, i) => (
-            <TimelineCard key={i} item={item} />
+            <TimelineCard key={i} item={item} type={type} />
           ))}
         </div>
       </div>
 
       <div>
-        <p className="uppercase tracking-[4px] text-pink-500 text-xs md:text-sm mb-4">
+        <p className="uppercase tracking-[4px] text-[#FF014F] text-xs font-semibold mb-2">
           {rightYear}
         </p>
-        <h3 className="text-3xl md:text-5xl font-bold text-gray-800 mb-10 md:mb-12">
+
+        <h3 className="text-2xl md:text-3xl font-bold text-[#1E2125] mb-8">
           {rightTitle}
         </h3>
 
-        <div className="space-y-10 md:space-y-12">
+        <div className="space-y-8">
           {rightData.map((item, i) => (
-            <TimelineCard key={i} item={item} />
+            <TimelineCard key={i} item={item} type={type} />
           ))}
         </div>
       </div>
@@ -250,26 +257,29 @@ export default function Resume() {
   );
 
   return (
-    <section id="resume" className="bg-[#ECF0F3] py-14 md:py-20">
+    <section id="resume" className="bg-[#ECF0F3] pt-6 pb-16 md:pt-10 md:pb-20">
       <div className="max-w-7xl mx-auto px-5">
+        {/* Heading */}
 
-        <p className="text-center uppercase tracking-[4px] text-pink-500 text-xs sm:text-sm">
-          2 Years 2 Months of Professional Experience
+        <p className="text-center uppercase tracking-[4px] text-[#FF014F] text-xs font-semibold">
+          2+ Years of Professional Experience
         </p>
 
-        <h2 className="text-center text-3xl sm:text-4xl md:text-6xl font-bold text-gray-800 mt-3 mb-10 md:mb-14">
+        <h2 className="text-center text-3xl md:text-4xl font-bold text-[#1E2125] mt-2 mb-8">
           My Resume
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 rounded-[28px] bg-[#ECF0F3] shadow-[10px_10px_25px_#c8d0e7,-10px_-10px_25px_#ffffff] overflow-hidden">
+        {/* Tabs */}
+
+        <div className="grid grid-cols-1 md:grid-cols-3 rounded-[22px] bg-[#ECF0F3] shadow-[8px_8px_20px_#c8d0e7,-8px_-8px_20px_#ffffff] overflow-hidden">
           {tabs.map((tab) => (
             <button
               key={tab}
               onClick={() => setActive(tab)}
-              className={`py-8 text-lg font-semibold transition-all duration-300 ${
+              className={`py-5 text-sm font-semibold uppercase tracking-[2px] transition-all duration-300 ${
                 active === tab
-                  ? "bg-[#ECF0F3] text-pink-500 shadow-[inset_6px_6px_12px_#d1d9e6,inset_-6px_-6px_12px_#ffffff]"
-                  : "text-gray-800 hover:text-pink-500"
+                  ? "bg-[#ECF0F3] text-[#FF014F] shadow-[inset_8px_8px_16px_#d1d9e6,inset_-8px_-8px_16px_#ffffff]"
+                  : "text-gray-600 hover:text-[#FF014F]"
               }`}
             >
               {tab}
@@ -277,70 +287,88 @@ export default function Resume() {
           ))}
         </div>
 
-        {active === "Education" &&
-          renderTimeline(
-            "Education Quality",
-            "Professional Journey",
-            educationLeft,
-            educationRight,
-            "2020 - 2026",
-            "2024 - 2026"
-          )}
-
-        {active === "Professional Skills" && (
-          <div className="grid lg:grid-cols-2 gap-16 mt-12 md:mt-20">
-
-            <div>
-              <p className="uppercase tracking-[4px] text-pink-500 text-xs md:text-sm mb-4">
-                Features
-              </p>
-
-              <h3 className="text-3xl md:text-5xl font-bold text-gray-800 mb-10 md:mb-12">
-                Design Skill
-              </h3>
-
-              {designSkills.map((skill, i) => (
-                <Progress key={i} name={skill.name} value={skill.value} />
-              ))}
-            </div>
-
-            <div>
-              <p className="uppercase tracking-[4px] text-pink-500 text-xs md:text-sm mb-4">
-                Features
-              </p>
-
-              <h3 className="text-3xl md:text-5xl font-bold text-gray-800 mb-10 md:mb-12">
-                Development Skill
-              </h3>
-
-              {devSkills.map((skill, i) => (
-                <Progress key={i} name={skill.name} value={skill.value} />
-              ))}
-            </div>
-
-          </div>
-        )}
+        {/* EXPERIENCE */}
 
         {active === "Experience" &&
           renderTimeline(
             "Professional Experience",
-            "Project Experience",
+            "Project Categories",
             experienceLeft,
             experienceRight,
-            "Sep 2024 - Nov 2026",
-            "Company Projects"
+            "2024 – 2027",
+            "Production Projects",
+            "experience"
           )}
 
-        {active === "Interview" &&
+        {/* PROFESSIONAL SKILLS */}
+
+        {active === "Professional Skills" && (
+          <div className="mt-8">
+            <div className="text-center mb-10">
+              <p className="uppercase tracking-[4px] text-[#FF014F] text-xs font-semibold">
+                Technical Expertise
+              </p>
+
+              <h3 className="text-3xl md:text-4xl font-bold text-[#1E2125] mt-2">
+                Capability Matrix
+              </h3>
+
+              <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm">
+                Production-ready technologies I use to build scalable web applications.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+              {technologies.map((tech) => (
+                <div
+                  key={tech.name}
+                  className="group rounded-[18px] p-4 bg-[#ECF0F3]
+                  shadow-[6px_6px_14px_#c8d0e7,-6px_-6px_14px_#ffffff]
+                  hover:-translate-y-2 hover:shadow-[10px_10px_20px_#c8d0e7,-10px_-10px_20px_#ffffff]
+                  transition-all duration-300"
+                >
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-12 h-12 rounded-xl bg-[#ECF0F3] shadow-[4px_4px_10px_#c8d0e7,-4px_-4px_10px_#ffffff] flex items-center justify-center mb-3">
+                      <img
+                        src={tech.icon}
+                        alt={tech.name}
+                        className="w-7 h-7 object-contain"
+                      />
+                    </div>
+
+                    <h4 className="text-sm font-bold text-[#1E2125] mb-3">
+                      {tech.name}
+                    </h4>
+
+                    <div className="flex flex-wrap justify-center gap-1">
+                      {tech.skills.map((skill) => (
+                        <span
+                          key={skill}
+                          className="px-2 py-1 rounded-full text-[10px] font-medium bg-[#ECF0F3] shadow-[2px_2px_6px_#c8d0e7,-2px_-2px_6px_#ffffff] text-gray-700 group-hover:text-[#FF014F] transition-colors"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* EDUCATION */}
+
+        {active === "Education" &&
           renderTimeline(
-            "Recent Project",
-            "Professional Highlights",
-            interviewLeft,
-            interviewRight,
-            "Latest Work",
-            "Career Growth"
+            "Education",
+            "Professional Journey",
+            educationLeft,
+            educationRight,
+            "2020 – 2024",
+            "2024 – Present",
+            "education"
           )}
-
       </div>
     </section>
   );

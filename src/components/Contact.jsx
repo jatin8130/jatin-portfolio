@@ -1,5 +1,16 @@
 import { useState } from "react";
-import { Send, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
+import {
+  Send,
+  Loader2,
+  CheckCircle2,
+  AlertCircle,
+  Mail,
+  Phone,
+  MapPin,
+  MessageCircle,
+  Briefcase,
+  Sparkles,
+} from "lucide-react";
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
@@ -12,8 +23,6 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    email: "",
-    subject: "",
     message: "",
   });
 
@@ -26,11 +35,12 @@ const Contact = () => {
 
   const sendMessage = async (e) => {
     e.preventDefault();
+
     setLoading(true);
     setStatus({ type: "", message: "" });
 
     try {
-      const res = await fetch("https://localhost:8080/send-mail", {
+      const res = await fetch("https://your-backend.onrender.com/send-mail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -44,14 +54,12 @@ const Contact = () => {
         setStatus({
           type: "success",
           message:
-            "Thanks for reaching out! Your message has been sent successfully.",
+            "Your message has been sent successfully. I'll get back to you soon.",
         });
 
         setFormData({
           name: "",
           phone: "",
-          email: "",
-          subject: "",
           message: "",
         });
       } else {
@@ -60,12 +68,10 @@ const Contact = () => {
           message: data.message || "Failed to send your message.",
         });
       }
-    } catch (err) {
-      console.error(err);
-
+    } catch {
       setStatus({
         type: "error",
-        message: "Unable to connect to the server. Please try again later.",
+        message: "Unable to connect to the server.",
       });
     }
 
@@ -77,28 +83,29 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="bg-[#ECF0F3] py-10">
-      <div className="max-w-7xl mx-auto px-4">
-
+    <section id="contact" className="bg-[#ECF0F3] pt-10 pb-20 scroll-mt-24">
+      <div className="max-w-7xl mx-auto px-3">
         {/* Heading */}
-        <div className="text-center mb-16">
-          <p className="uppercase tracking-[5px] text-[#FF014F] text-sm font-medium">
-            Contact
+
+        <div className="text-center mb-14 px-2">
+          <p className="uppercase tracking-[5px] text-[#FF014F] text-sm font-semibold">
+            Get In Touch
           </p>
 
-          <h2 className="text-5xl md:text-7xl font-bold text-[#1e2125] mt-3">
-            Contact With Me
+          <h2 className="text-3xl md:text-5xl font-bold text-[#1E2125] mt-3">
+            {`Let's Build Something Great`}
           </h2>
+
+          <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
+            Looking for a Full Stack Developer for your next project or
+            {`opportunity? I'd love to hear from you.`}
+          </p>
         </div>
 
-        {/* Main Grid */}
-        <div className="grid lg:grid-cols-[0.9fr_1.4fr] gap-10">
+        <div className="grid lg:grid-cols-[0.9fr_1.2fr] gap-8 items-start">
+          {/* LEFT CARD */}
 
-          {/* Left Card */}
-          <div
-            className="bg-[#ECF0F3] rounded-[30px] p-5
-            shadow-[10px_10px_25px_#c8d0e7,-10px_-10px_25px_#ffffff]"
-          >
+          <div className="rounded-[30px] bg-[#ECF0F3] p-6 shadow-[12px_12px_28px_#c8d0e7,-12px_-12px_28px_#ffffff]">
             <div className="overflow-hidden rounded-2xl">
               <img
                 src="/image/contact1.png"
@@ -107,256 +114,183 @@ const Contact = () => {
               />
             </div>
 
-            <h3 className="text-4xl font-bold text-[#1e2125] mt-8">
-              Jatin Mehra
-            </h3>
+            <div className="mt-8">
+              <h3 className="text-3xl font-bold text-[#1E2125]">
+                Jatin Mehra
+              </h3>
 
-            <p className="text-gray-500 text-xl mt-2">
-              Full Stack Developer
-            </p>
-
-            <p className="text-gray-600 leading-9 text-lg mt-8">
-              {`I'm a Full Stack Developer with **2 Years 2 Months** of
-              professional experience building modern web applications using
-              React, Next.js, Node.js, Express, MongoDB, Redis, and AWS.
-              I'm available for full-time opportunities and exciting
-              development projects.`}
-            </p>
-
-            <div className="mt-8 space-y-4 text-lg">
-              <p className="text-gray-700">
-                <span className="font-semibold">Company:</span> Techsunset
+              <p className="text-[#FF014F] font-semibold mt-2">
+                Full Stack Developer • 2+ Years Experience
               </p>
 
-              <p className="text-gray-700">
-                <span className="font-semibold">Location:</span> Bengaluru
-                Electronic City Phase-1
-              </p>
-
-              <p className="text-gray-700">
-                <span className="font-semibold">Email:</span>{" "}
-                jatinmehra8130@gmail.com
+              <p className="text-gray-600 leading-7 text-[15px] mt-6">
+                {`I develop modern, scalable web applications using React,
+                Next.js, Node.js, Express.js, MongoDB, Redis, Docker and AWS.
+                I'm currently available for full-time opportunities and
+                freelance collaborations.`}
               </p>
             </div>
 
-            <div className="mt-12">
-              <p className="uppercase tracking-[3px] text-[#1e2125] font-medium mb-6">
-                Find With Me
-              </p>
+            {/* Contact Details */}
 
-              <div className="flex gap-5">
-
-                {/* LinkedIn */}
-                <a
-                  href="#"
-                  className="group w-16 h-16 flex items-center justify-center rounded-xl
-                  bg-[#ECF0F3]
-                  shadow-[6px_6px_12px_#c8d0e7,-6px_-6px_12px_#ffffff]
-                  hover:-translate-y-1 hover:bg-[#181717]
-                  transition duration-300"
-                >
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-plain.svg"
-                    alt="LinkedIn"
-                    className="w-7 h-7 group-hover:brightness-0 group-hover:invert"
-                  />
-                </a>
-
-                {/* GitHub */}
-                <a
-                  href="#"
-                  className="group w-16 h-16 flex items-center justify-center rounded-xl
-                  bg-[#ECF0F3]
-                  shadow-[6px_6px_12px_#c8d0e7,-6px_-6px_12px_#ffffff]
-                  hover:-translate-y-1 hover:bg-[#181717]
-                  transition duration-300"
-                >
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
-                    alt="GitHub"
-                    className="w-7 h-7 group-hover:brightness-0 group-hover:invert"
-                  />
-                </a>
-
-                {/* Gmail */}
-                <a
-                  href="#"
-                  className="group w-16 h-16 flex items-center justify-center rounded-xl
-                  bg-[#ECF0F3]
-                  shadow-[6px_6px_12px_#c8d0e7,-6px_-6px_12px_#ffffff]
-                  hover:-translate-y-1 hover:bg-[#181717]
-                  transition duration-300"
-                >
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/google/google-original.svg"
-                    alt="Email"
-                    className="w-7 h-7 group-hover:brightness-0 group-hover:invert"
-                  />
-                </a>
-
-              </div>
-            </div>
-          </div>
-
-          {/* Right Form */}
-          <div
-            className="bg-[#ECF0F3] rounded-[30px] py-8 px-4 md:p-10
-            shadow-[10px_10px_25px_#c8d0e7,-10px_-10px_25px_#ffffff]"
-          >
-            <form onSubmit={sendMessage} className="space-y-8">
-
-              <div className="grid md:grid-cols-2 gap-8">
-
-                <div>
-                  <label className="uppercase tracking-[3px] text-sm text-gray-600 mb-3 block">
-                    Your Name
-                  </label>
-
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full h-16 px-5 rounded-xl bg-[#ECF0F3]
-                    border border-gray-300
-                    focus:border-[#FF014F] focus:outline-none
-                    shadow-[inset_4px_4px_8px_#d1d9e6,inset_-4px_-4px_8px_#ffffff]"
-                  />
+            <div className="mt-8 space-y-5">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-[#ECF0F3] shadow-[5px_5px_12px_#c8d0e7,-5px_-5px_12px_#ffffff] flex items-center justify-center">
+                  <Mail size={20} className="text-[#FF014F]" />
                 </div>
 
                 <div>
-                  <label className="uppercase tracking-[3px] text-sm text-gray-600 mb-3 block">
-                    Phone Number{" "}
-                    <span className="text-gray-400">(Optional)</span>
-                  </label>
+                  <p className="text-xs uppercase tracking-[2px] text-gray-500">
+                    Email
+                  </p>
 
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full h-16 px-5 rounded-xl bg-[#ECF0F3]
-                    border border-gray-300
-                    focus:border-[#FF014F] focus:outline-none
-                    shadow-[inset_4px_4px_8px_#d1d9e6,inset_-4px_-4px_8px_#ffffff]"
-                  />
-
-                  <p className="text-xs text-gray-500 mt-2">
-                    Optional — your email is enough. Share your phone number
-                    only if you prefer a call.
+                  <p className="font-medium text-[#1E2125] break-all">
+                    jatintechsunset@gmail.com
                   </p>
                 </div>
-
               </div>
 
-              <div>
-                <label className="uppercase tracking-[3px] text-sm text-gray-600 mb-3 block">
-                  Email
-                </label>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-[#ECF0F3] shadow-[5px_5px_12px_#c8d0e7,-5px_-5px_12px_#ffffff] flex items-center justify-center">
+                  <Phone size={20} className="text-[#25D366]" />
+                </div>
 
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full h-16 px-5 rounded-xl bg-[#ECF0F3]
-                  border border-gray-300
-                  focus:border-[#FF014F] focus:outline-none
-                  shadow-[inset_4px_4px_8px_#d1d9e6,inset_-4px_-4px_8px_#ffffff]"
-                />
+                <div>
+                  <p className="text-xs uppercase tracking-[2px] text-gray-500">
+                    WhatsApp
+                  </p>
+
+                  <p className="font-medium text-[#1E2125]">
+                    +91 8130163436
+                  </p>
+                </div>
               </div>
 
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-[#ECF0F3] shadow-[5px_5px_12px_#c8d0e7,-5px_-5px_12px_#ffffff] flex items-center justify-center">
+                  <MapPin size={20} className="text-[#FF014F]" />
+                </div>
+
+                <div>
+                  <p className="text-xs uppercase tracking-[2px] text-gray-500">
+                    Location
+                  </p>
+
+                  <p className="font-medium text-[#1E2125]">
+                    Bengaluru, India
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* WhatsApp Button */}
+
+            <a
+              href="https://wa.me/918130163436?text=Hi%20Jatin,%20I'd%20like%20to%20connect."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-10 flex items-center justify-center gap-3 w-full py-4 rounded-2xl text-white font-semibold transition-all duration-300 hover:-translate-y-1"
+              style={{
+                background: "linear-gradient(135deg,#25D366,#16A34A)",
+                boxShadow:
+                  "0 0 18px rgba(37,211,102,.35),0 0 35px rgba(37,211,102,.18)",
+              }}
+            >
+              <MessageCircle size={20} />
+              Chat on WhatsApp
+            </a>
+          </div>
+
+          {/* RIGHT CARD */}
+
+          <div className="rounded-[30px] bg-[#ECF0F3] p-6 md:p-8 shadow-[12px_12px_28px_#c8d0e7,-12px_-12px_28px_#ffffff]">
+            <div className="mb-8">
+              <h3 className="text-2xl font-bold text-[#1E2125]">
+                Send a Message
+              </h3>
+
+              <p className="text-gray-500 mt-2">
+                {`I'll receive your message directly in my inbox.`}
+              </p>
+            </div>
+
+            <form onSubmit={sendMessage} className="space-y-6">
               <div>
-                <label className="uppercase tracking-[3px] text-sm text-gray-600 mb-3 block">
-                  Subject
+                <label className="uppercase tracking-[3px] text-xs text-gray-600 block mb-3">
+                  Name
                 </label>
 
                 <input
                   type="text"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
+                  name="name"
                   required
-                  className="w-full h-16 px-5 rounded-xl bg-[#ECF0F3]
-                  border border-gray-300
-                  focus:border-[#FF014F] focus:outline-none
-                  shadow-[inset_4px_4px_8px_#d1d9e6,inset_-4px_-4px_8px_#ffffff]"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full h-14 px-5 rounded-xl bg-[#ECF0F3] border border-gray-300 shadow-[inset_4px_4px_8px_#d1d9e6,inset_-4px_-4px_8px_#ffffff] focus:border-[#FF014F] focus:outline-none transition"
                 />
               </div>
 
               <div>
-                <label className="uppercase tracking-[3px] text-sm text-gray-600 mb-3 block">
-                  Your Message
+                <label className="uppercase tracking-[3px] text-xs text-gray-600 block mb-3">
+                  WhatsApp Number
                 </label>
 
-                <textarea
-                  rows="8"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
+                <input
+                  type="tel"
+                  name="phone"
                   required
-                  className="w-full px-5 py-4 rounded-xl bg-[#ECF0F3]
-                  border border-gray-300 resize-none
-                  focus:border-[#FF014F] focus:outline-none
-                  shadow-[inset_4px_4px_8px_#d1d9e6,inset_-4px_-4px_8px_#ffffff]"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="+91 9876543210"
+                  className="w-full h-14 px-5 rounded-xl bg-[#ECF0F3] border border-gray-300 shadow-[inset_4px_4px_8px_#d1d9e6,inset_-4px_-4px_8px_#ffffff] focus:border-[#FF014F] focus:outline-none transition"
                 />
               </div>
 
-              {/* Modern Status Message */}
+              <div>
+                <label className="uppercase tracking-[3px] text-xs text-gray-600 block mb-3">
+                  Message
+                </label>
+
+                <textarea
+                  rows="6"
+                  name="message"
+                  required
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="w-full px-5 py-4 rounded-xl resize-none bg-[#ECF0F3] border border-gray-300 shadow-[inset_4px_4px_8px_#d1d9e6,inset_-4px_-4px_8px_#ffffff] focus:border-[#FF014F] focus:outline-none transition"
+                />
+              </div>
+
               {status.message && (
                 <div
-                  className={`rounded-2xl p-4 flex items-start gap-3
-                  shadow-[6px_6px_12px_#c8d0e7,-6px_-6px_12px_#ffffff]
-                  ${
+                  className={`rounded-xl p-4 flex items-start gap-3 ${
                     status.type === "success"
                       ? "bg-green-50 border border-green-200"
                       : "bg-red-50 border border-red-200"
                   }`}
                 >
                   {status.type === "success" ? (
-                    <CheckCircle2 className="text-green-500 mt-0.5" size={24} />
+                    <CheckCircle2 size={22} className="text-green-500" />
                   ) : (
-                    <AlertCircle className="text-red-500 mt-0.5" size={24} />
+                    <AlertCircle size={22} className="text-red-500" />
                   )}
 
-                  <div>
-                    <p
-                      className={`font-semibold ${
-                        status.type === "success"
-                          ? "text-green-700"
-                          : "text-red-700"
-                      }`}
-                    >
-                      {status.type === "success"
-                        ? "Message Sent"
-                        : "Something Went Wrong"}
-                    </p>
-
-                    <p
-                      className={`text-sm mt-1 ${
-                        status.type === "success"
-                          ? "text-green-600"
-                          : "text-red-600"
-                      }`}
-                    >
-                      {status.message}
-                    </p>
-                  </div>
+                  <p
+                    className={`text-sm ${
+                      status.type === "success"
+                        ? "text-green-700"
+                        : "text-red-700"
+                    }`}
+                  >
+                    {status.message}
+                  </p>
                 </div>
               )}
 
               <button
                 type="submit"
                 disabled={loading}
-                className="group w-full h-16 rounded-xl uppercase tracking-[3px]
-                text-[#1e2125] font-medium
-                bg-[#ECF0F3]
-                shadow-[8px_8px_18px_#c8d0e7,-8px_-8px_18px_#ffffff]
-                hover:-translate-y-1 hover:text-[#FF014F]
-                transition duration-300 flex items-center justify-center gap-3
-                disabled:opacity-70 disabled:cursor-not-allowed"
+                className="group w-full h-14 rounded-xl font-semibold uppercase tracking-[3px] bg-[#ECF0F3] text-[#1E2125] shadow-[8px_8px_18px_#c8d0e7,-8px_-8px_18px_#ffffff] hover:-translate-y-1 hover:text-[#FF014F] transition-all duration-300 disabled:opacity-70 flex items-center justify-center gap-3"
               >
                 {loading ? (
                   <>
@@ -373,10 +307,74 @@ const Contact = () => {
                   </>
                 )}
               </button>
-
             </form>
-          </div>
 
+            {/* Fills Empty Space */}
+
+            <div className="mt-10 pt-8 border-t border-gray-300">
+              <div className="flex items-center gap-2 mb-6">
+                <Sparkles size={18} className="text-[#FF014F]" />
+
+                <h4 className="text-xl font-bold text-[#1E2125]">
+                  Why Work With Me
+                </h4>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="rounded-2xl p-4 bg-[#ECF0F3] shadow-[6px_6px_14px_#c8d0e7,-6px_-6px_14px_#ffffff]">
+                  <Briefcase size={22} className="text-[#FF014F] mb-3" />
+
+                  <h5 className="font-semibold text-[#1E2125]">
+                    Production Experience
+                  </h5>
+
+                  <p className="text-sm text-gray-600 mt-1">
+                    2+ years building real client projects.
+                  </p>
+                </div>
+
+                <div className="rounded-2xl p-4 bg-[#ECF0F3] shadow-[6px_6px_14px_#c8d0e7,-6px_-6px_14px_#ffffff]">
+                  <MessageCircle size={22} className="text-[#25D366] mb-3" />
+
+                  <h5 className="font-semibold text-[#1E2125]">
+                    Open to Opportunities
+                  </h5>
+
+                  <p className="text-sm text-gray-600 mt-1">
+                    Full-time and remote collaborations.
+                  </p>
+                </div>
+              </div>
+
+              {/* Tech Chips */}
+
+              <div className="mt-8">
+                <p className="uppercase tracking-[3px] text-xs text-gray-500 mb-3">
+                  Core Technologies
+                </p>
+
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    "React",
+                    "Next.js",
+                    "Node.js",
+                    "Express",
+                    "MongoDB",
+                    "CI/CD",
+                    "Docker",
+                    "AWS",
+                  ].map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-3 py-2 rounded-full text-xs font-medium bg-[#ECF0F3] text-gray-700 shadow-[3px_3px_8px_#c8d0e7,-3px_-3px_8px_#ffffff]"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
