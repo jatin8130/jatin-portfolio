@@ -40,7 +40,7 @@ const Contact = () => {
     setStatus({ type: "", message: "" });
 
     try {
-      const res = await fetch("https://your-backend.onrender.com/send-mail", {
+      const res = await fetch("https://jatin-portfolio-server.vercel.app/send-mail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -363,6 +363,7 @@ const Contact = () => {
                     "CI/CD",
                     "Docker",
                     "AWS",
+                    "Jira"
                   ].map((tech) => (
                     <span
                       key={tech}
