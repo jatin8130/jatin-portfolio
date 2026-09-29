@@ -60,7 +60,7 @@ const educationRight = [
 const technologies = [
   {
     name: "Gen AI",
-    icon: "/image/ai.png",
+    icon: "/image/ai.webp",
     skills: ["AI", "Prompts", "Automation"],
   },
   {
