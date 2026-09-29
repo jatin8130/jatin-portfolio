@@ -25,7 +25,7 @@ const experienceRight = [
     year: "Production Projects",
     title: "Project Categories",
     org: "Techsunset",
-    desc: "Worked on E-commerce, Real Estate and Healthcare web applications while collaborating with cross-functional teams to deliver scalable client solutions.",
+    desc: "Worked on CRM, accounting, HR, inventory, project management, and education platforms, contributing to scalable full-stack solutions and collaborating with cross-functional teams to deliver business-focused applications.",
   },
 ];
 
@@ -130,7 +130,7 @@ const technologies = [
   },
   {
     name: "Kafka",
-    icon: "https://cdn.simpleicons.org/apachekafka/000000",
+    icon: "https://cdn.simpleicons.org/apachekafka/ffffff",
     skills: ["Events", "Stream", "Queue"],
   },
   {
@@ -150,10 +150,10 @@ const technologies = [
 const TimelineCard = ({ item, type }) => (
   <div className="relative pl-9">
     {/* Gradient Line */}
-    <div className="absolute left-3 top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#FF014F] via-pink-300 to-gray-300 rounded-full"></div>
+    <div className="absolute left-3 top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#FF014F] via-pink-400 to-gray-700 rounded-full"></div>
 
     {/* Node */}
-    <div className="absolute left-0 top-7 w-7 h-7 rounded-full bg-[#ECF0F3] shadow-[4px_4px_10px_#c8d0e7,-4px_-4px_10px_#ffffff] flex items-center justify-center">
+    <div className="absolute left-0 top-7 w-7 h-7 rounded-full bg-[#17191D] shadow-[4px_4px_10px_#08090b,-4px_-4px_10px_#24272d] flex items-center justify-center">
       {type === "experience" ? (
         <Briefcase size={14} color="#FF014F" />
       ) : (
@@ -163,34 +163,41 @@ const TimelineCard = ({ item, type }) => (
 
     {/* Card */}
     <div
-      className="group relative rounded-[24px] bg-[#ECF0F3] p-5
-      shadow-[8px_8px_18px_#c8d0e7,-8px_-8px_18px_#ffffff]
-      hover:-translate-y-2 hover:shadow-[12px_12px_24px_#c8d0e7,-12px_-12px_24px_#ffffff]
+      className="group relative rounded-[24px] bg-[#17191D] p-5
+      border border-white/5
+      shadow-[8px_8px_18px_#08090b,-8px_-8px_18px_#24272d]
+      hover:-translate-y-2
+      hover:shadow-[12px_12px_24px_#08090b,-12px_-12px_24px_#24272d]
       transition-all duration-500"
     >
       {/* Year Badge */}
-      <span className="absolute -top-3 right-5 px-4 py-1.5 rounded-full bg-[#FF014F] text-white text-[11px] font-bold uppercase tracking-[2px] shadow-lg">
+      <span className="absolute -top-3 right-5 px-4 py-1.5 rounded-full bg-[#FF014F] text-white text-[11px] font-bold uppercase tracking-[2px] shadow-[0_5px_15px_rgba(255,1,79,0.25)]">
         {item.year}
       </span>
 
-      <h3 className="text-lg md:text-xl font-bold text-[#1E2125] mt-3 group-hover:text-[#FF014F] transition-colors">
+      <h3 className="text-lg md:text-xl font-bold text-white mt-3 group-hover:text-[#FF014F] transition-colors">
         {item.title}
       </h3>
 
-      <div className="flex items-center gap-2 mt-2 text-gray-500 text-sm">
+      <div className="flex items-center gap-2 mt-2 text-gray-400 text-sm">
         <Building2 size={15} />
         {item.org}
       </div>
 
-      <p className="mt-5 text-gray-600 text-[14px] leading-7">{item.desc}</p>
+      <p className="mt-5 text-gray-400 text-[14px] leading-7">
+        {item.desc}
+      </p>
 
-      <div className="flex justify-between items-center mt-5 pt-4 border-t border-gray-300">
+      <div className="flex justify-between items-center mt-5 pt-4 border-t border-white/10">
         <span className="text-[11px] uppercase tracking-[2px] text-gray-500">
           Professional Milestone
         </span>
 
-        <div className="w-10 h-10 rounded-full bg-[#ECF0F3] shadow-[4px_4px_10px_#c8d0e7,-4px_-4px_10px_#ffffff] flex items-center justify-center group-hover:bg-[#FF014F] transition-all duration-300">
-          <ArrowUpRight size={18} className="group-hover:text-white transition-colors" />
+        <div className="w-10 h-10 rounded-full bg-[#17191D] border border-white/5 shadow-[4px_4px_10px_#08090b,-4px_-4px_10px_#24272d] flex items-center justify-center group-hover:bg-[#FF014F] transition-all duration-300">
+          <ArrowUpRight
+            size={18}
+            className="text-gray-400 group-hover:text-white transition-colors"
+          />
         </div>
       </div>
     </div>
@@ -227,7 +234,7 @@ export default function Resume() {
           {leftYear}
         </p>
 
-        <h3 className="text-2xl md:text-3xl font-bold text-[#1E2125] mb-8">
+        <h3 className="text-2xl md:text-3xl font-bold text-white mb-8">
           {leftTitle}
         </h3>
 
@@ -243,7 +250,7 @@ export default function Resume() {
           {rightYear}
         </p>
 
-        <h3 className="text-2xl md:text-3xl font-bold text-[#1E2125] mb-8">
+        <h3 className="text-2xl md:text-3xl font-bold text-white mb-8">
           {rightTitle}
         </h3>
 
@@ -257,30 +264,40 @@ export default function Resume() {
   );
 
   return (
-    <section id="resume" className="bg-[#ECF0F3] pt-6 pb-16 md:pt-10 md:pb-20">
-      <div className="max-w-7xl mx-auto px-5">
+    <section
+      id="resume"
+      className="
+  relative overflow-hidden
+  bg-[#0D0B10]
+  py-16 md:py-20
+  before:absolute before:inset-0
+  before:bg-[radial-gradient(ellipse_at_0%_50%,rgba(255,1,79,0.16),transparent_45%),radial-gradient(ellipse_at_100%_50%,rgba(255,1,79,0.10),transparent_45%),radial-gradient(ellipse_at_50%_100%,rgba(70,45,90,0.10),transparent_55%)]
+  before:pointer-events-none
+"
+    >
+
+      <div className="relative max-w-7xl mx-auto px-5">
         {/* Heading */}
 
         <p className="text-center uppercase tracking-[4px] text-[#FF014F] text-xs font-semibold">
           2+ Years of Professional Experience
         </p>
 
-        <h2 className="text-center text-3xl md:text-4xl font-bold text-[#1E2125] mt-2 mb-8">
+        <h2 className="text-center text-3xl md:text-4xl font-bold text-white mt-2 mb-8">
           My Resume
         </h2>
 
         {/* Tabs */}
 
-        <div className="grid grid-cols-1 md:grid-cols-3 rounded-[22px] bg-[#ECF0F3] shadow-[8px_8px_20px_#c8d0e7,-8px_-8px_20px_#ffffff] overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-3 rounded-[22px] bg-[#17191D] border border-white/5 shadow-[8px_8px_20px_#08090b,-8px_-8px_20px_#24272d] overflow-hidden">
           {tabs.map((tab) => (
             <button
               key={tab}
               onClick={() => setActive(tab)}
-              className={`py-5 text-sm font-semibold uppercase tracking-[2px] transition-all duration-300 ${
-                active === tab
-                  ? "bg-[#ECF0F3] text-[#FF014F] shadow-[inset_8px_8px_16px_#d1d9e6,inset_-8px_-8px_16px_#ffffff]"
-                  : "text-gray-600 hover:text-[#FF014F]"
-              }`}
+              className={`py-5 text-sm font-semibold uppercase tracking-[2px] transition-all duration-300 ${active === tab
+                ? "bg-[#17191D] text-[#FF014F] shadow-[inset_8px_8px_16px_#08090b,inset_-8px_-8px_16px_#24272d]"
+                : "text-gray-400 hover:text-[#FF014F]"
+                }`}
             >
               {tab}
             </button>
@@ -309,12 +326,13 @@ export default function Resume() {
                 Technical Expertise
               </p>
 
-              <h3 className="text-3xl md:text-4xl font-bold text-[#1E2125] mt-2">
+              <h3 className="text-3xl md:text-4xl font-bold text-white mt-2">
                 Capability Matrix
               </h3>
 
-              <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm">
-                Production-ready technologies I use to build scalable web applications.
+              <p className="text-gray-400 mt-3 max-w-2xl mx-auto text-sm">
+                Production-ready technologies I use to build scalable web
+                applications.
               </p>
             </div>
 
@@ -322,13 +340,15 @@ export default function Resume() {
               {technologies.map((tech) => (
                 <div
                   key={tech.name}
-                  className="group rounded-[18px] p-4 bg-[#ECF0F3]
-                  shadow-[6px_6px_14px_#c8d0e7,-6px_-6px_14px_#ffffff]
-                  hover:-translate-y-2 hover:shadow-[10px_10px_20px_#c8d0e7,-10px_-10px_20px_#ffffff]
+                  className="group rounded-[18px] p-4 bg-[#17191D]
+                  border border-white/5
+                  shadow-[6px_6px_14px_#08090b,-6px_-6px_14px_#24272d]
+                  hover:-translate-y-2
+                  hover:shadow-[10px_10px_20px_#08090b,-10px_-10px_20px_#24272d]
                   transition-all duration-300"
                 >
                   <div className="flex flex-col items-center text-center">
-                    <div className="w-12 h-12 rounded-xl bg-[#ECF0F3] shadow-[4px_4px_10px_#c8d0e7,-4px_-4px_10px_#ffffff] flex items-center justify-center mb-3">
+                    <div className="w-12 h-12 rounded-xl bg-[#17191D] border border-white/5 shadow-[4px_4px_10px_#08090b,-4px_-4px_10px_#24272d] flex items-center justify-center mb-3">
                       <img
                         src={tech.icon}
                         alt={tech.name}
@@ -336,7 +356,7 @@ export default function Resume() {
                       />
                     </div>
 
-                    <h4 className="text-sm font-bold text-[#1E2125] mb-3">
+                    <h4 className="text-sm font-bold text-white mb-3">
                       {tech.name}
                     </h4>
 
@@ -344,7 +364,7 @@ export default function Resume() {
                       {tech.skills.map((skill) => (
                         <span
                           key={skill}
-                          className="px-2 py-1 rounded-full text-[10px] font-medium bg-[#ECF0F3] shadow-[2px_2px_6px_#c8d0e7,-2px_-2px_6px_#ffffff] text-gray-700 group-hover:text-[#FF014F] transition-colors"
+                          className="px-2 py-1 rounded-full text-[10px] font-medium bg-[#17191D] border border-white/5 shadow-[2px_2px_6px_#08090b,-2px_-2px_6px_#24272d] text-gray-400 group-hover:text-[#FF014F] transition-colors"
                         >
                           {skill}
                         </span>

@@ -194,7 +194,17 @@ export default function Blog() {
   }, [selected]);
 
   return (
-    <section id="blog" className="bg-[#ECF0F3] py-10">
+    <section
+      id="blog"
+      className="
+  relative overflow-hidden
+  bg-[#0D0B10]
+  py-16 md:py-20
+  before:absolute before:inset-0
+  before:bg-[radial-gradient(ellipse_at_0%_50%,rgba(255,1,79,0.16),transparent_45%),radial-gradient(ellipse_at_100%_50%,rgba(255,1,79,0.10),transparent_45%),radial-gradient(ellipse_at_50%_100%,rgba(70,45,90,0.10),transparent_55%)]
+  before:pointer-events-none
+"
+    >
       <div className="max-w-7xl mx-auto px-5">
         {/* ================= HEADING ================= */}
 
@@ -203,11 +213,11 @@ export default function Blog() {
             Insights & Articles
           </p>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1E2125] mt-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mt-4">
             Latest Blog
           </h2>
 
-          <p className="text-gray-500 mt-5 text-sm md:text-base leading-7">
+          <p className="text-gray-400 mt-5 text-sm md:text-base leading-7">
             Technical insights about software architecture, cloud
             infrastructure, scalability, artificial intelligence and modern
             development practices.
@@ -225,9 +235,10 @@ export default function Blog() {
                 group
                 text-left
                 rounded-[30px]
-                bg-[#ECF0F3]
+                bg-[#15181D]
                 p-5
-                shadow-[10px_10px_22px_#c8d0e7,-10px_-10px_22px_#ffffff]
+                border border-white/5
+                shadow-[10px_10px_22px_#08090c,-8px_-8px_20px_#1d2128]
                 hover:-translate-y-3
                 transition-all
                 duration-500
@@ -238,7 +249,7 @@ export default function Blog() {
             >
               {/* Image */}
 
-              <div className="relative overflow-hidden rounded-[22px] aspect-[16/10] bg-gray-200">
+              <div className="relative overflow-hidden rounded-[22px] aspect-[16/10] bg-[#0F1115]">
                 <img
                   src={blog.image}
                   alt={blog.title}
@@ -258,7 +269,7 @@ export default function Blog() {
 
                 {/* Image overlay */}
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
 
               {/* Category */}
@@ -276,8 +287,9 @@ export default function Blog() {
                     flex
                     items-center
                     justify-center
-                    bg-[#ECF0F3]
-                    shadow-[4px_4px_10px_#c8d0e7,-4px_-4px_10px_#ffffff]
+                    bg-[#15181D]
+                    border border-white/5
+                    shadow-[4px_4px_10px_#08090c,-4px_-4px_10px_#1d2128]
                   "
                 >
                   <ArrowUpRight
@@ -299,7 +311,7 @@ export default function Blog() {
                   text-xl
                   md:text-2xl
                   font-bold
-                  text-[#1E2125]
+                  text-white
                   mt-4
                   leading-tight
                   group-hover:text-[#FF014F]
@@ -311,7 +323,7 @@ export default function Blog() {
 
               {/* Meta */}
 
-              <div className="flex items-center gap-5 mt-5 text-sm text-gray-500">
+              <div className="flex items-center gap-5 mt-5 text-sm text-gray-400">
                 <span className="flex items-center gap-1.5">
                   <Calendar size={15} />
                   {blog.date}
@@ -335,7 +347,7 @@ export default function Blog() {
             fixed
             inset-0
             z-[9999]
-            bg-black/60
+            bg-black/70
             backdrop-blur-md
             flex
             items-center
@@ -356,8 +368,9 @@ export default function Blog() {
               overflow-y-auto
               rounded-[28px]
               md:rounded-[36px]
-              bg-[#ECF0F3]
-              shadow-[18px_18px_40px_#15182080,-12px_-12px_35px_#ffffff30]
+              bg-[#15181D]
+              border border-white/5
+              shadow-[18px_18px_40px_#08090c,-12px_-12px_35px_#252a32]
               scrollbar-thin
             "
           >
@@ -381,10 +394,11 @@ export default function Blog() {
                 flex
                 items-center
                 justify-center
-                bg-[#ECF0F3]/95
+                bg-[#15181D]/95
                 backdrop-blur
-                shadow-[5px_5px_12px_#c8d0e7,-5px_-5px_12px_#ffffff]
-                text-[#1E2125]
+                border border-white/10
+                shadow-[5px_5px_12px_#08090c,-5px_-5px_12px_#252a32]
+                text-gray-300
                 hover:text-[#FF014F]
                 hover:scale-105
                 transition-all
@@ -411,7 +425,7 @@ export default function Blog() {
 
               {/* Dark gradient */}
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
 
               {/* Image title */}
 
@@ -431,7 +445,7 @@ export default function Blog() {
             <div className="p-6 sm:p-8 md:p-12">
               {/* Meta */}
 
-              <div className="flex flex-wrap items-center gap-5 md:gap-7 text-gray-500 text-sm">
+              <div className="flex flex-wrap items-center gap-5 md:gap-7 text-gray-400 text-sm">
                 <span className="flex items-center gap-2">
                   <Calendar size={16} />
                   {selected.date}
@@ -449,7 +463,7 @@ export default function Blog() {
 
               {/* Intro */}
 
-              <p className="text-lg md:text-xl text-[#1E2125] font-medium leading-8">
+              <p className="text-lg md:text-xl text-gray-200 font-medium leading-8">
                 {selected.intro}
               </p>
 
@@ -459,7 +473,7 @@ export default function Blog() {
                 {selected.paragraphs.map((paragraph, index) => (
                   <p
                     key={index}
-                    className="text-gray-600 text-base md:text-lg leading-8"
+                    className="text-gray-400 text-base md:text-lg leading-8"
                   >
                     {paragraph}
                   </p>
@@ -469,7 +483,7 @@ export default function Blog() {
               {/* ================= KEY AREAS ================= */}
 
               <div className="mt-10">
-                <h3 className="text-2xl font-bold text-[#1E2125] mb-5">
+                <h3 className="text-2xl font-bold text-white mb-5">
                   Key Areas
                 </h3>
 
@@ -483,8 +497,9 @@ export default function Blog() {
                         gap-3
                         p-4
                         rounded-2xl
-                        bg-[#ECF0F3]
-                        shadow-[inset_4px_4px_9px_#d1d9e6,inset_-4px_-4px_9px_#ffffff]
+                        bg-[#111419]
+                        border border-white/5
+                        shadow-[inset_4px_4px_9px_#08090c,inset_-4px_-4px_9px_#1d2128]
                       "
                     >
                       <CheckCircle2
@@ -492,7 +507,7 @@ export default function Blog() {
                         className="text-[#FF014F] mt-0.5 shrink-0"
                       />
 
-                      <span className="text-gray-600 text-sm md:text-base leading-6">
+                      <span className="text-gray-400 text-sm md:text-base leading-6">
                         {point}
                       </span>
                     </div>
@@ -503,11 +518,11 @@ export default function Blog() {
               {/* ================= TECHNOLOGIES ================= */}
 
               <div className="mt-10">
-                <h3 className="text-2xl font-bold text-[#1E2125] mb-4">
+                <h3 className="text-2xl font-bold text-white mb-4">
                   Technology & Approach
                 </h3>
 
-                <p className="text-gray-600 text-base md:text-lg leading-8">
+                <p className="text-gray-400 text-base md:text-lg leading-8">
                   {selected.technologies}
                 </p>
               </div>
@@ -518,10 +533,11 @@ export default function Blog() {
                 className="
                   mt-12
                   rounded-[24px]
-                  bg-[#ECF0F3]
+                  bg-[#111419]
                   p-6
                   md:p-8
-                  shadow-[inset_7px_7px_15px_#d1d9e6,inset_-7px_-7px_15px_#ffffff]
+                  border border-white/5
+                  shadow-[inset_7px_7px_15px_#08090c,inset_-7px_-7px_15px_#1d2128]
                 "
               >
                 <div className="flex items-center gap-3 mb-4">
@@ -533,8 +549,9 @@ export default function Blog() {
                       flex
                       items-center
                       justify-center
-                      bg-[#ECF0F3]
-                      shadow-[4px_4px_10px_#c8d0e7,-4px_-4px_10px_#ffffff]
+                      bg-[#15181D]
+                      border border-white/5
+                      shadow-[4px_4px_10px_#08090c,-4px_-4px_10px_#1d2128]
                     "
                   >
                     <CheckCircle2
@@ -543,12 +560,12 @@ export default function Blog() {
                     />
                   </div>
 
-                  <h4 className="text-lg font-bold text-[#1E2125]">
+                  <h4 className="text-lg font-bold text-white">
                     Key Takeaway
                   </h4>
                 </div>
 
-                <p className="text-gray-600 leading-7">
+                <p className="text-gray-400 leading-7">
                   {selected.takeaway}
                 </p>
               </div>
@@ -563,12 +580,13 @@ export default function Blog() {
                     px-7
                     py-3
                     rounded-full
-                    bg-[#ECF0F3]
-                    shadow-[6px_6px_14px_#c8d0e7,-6px_-6px_14px_#ffffff]
+                    bg-[#15181D]
+                    border border-white/5
+                    shadow-[6px_6px_14px_#08090c,-6px_-6px_14px_#1d2128]
                     text-[#FF014F]
                     font-semibold
                     hover:-translate-y-1
-                    hover:shadow-[8px_8px_16px_#c8d0e7,-8px_-8px_16px_#ffffff]
+                    hover:shadow-[8px_8px_16px_#08090c,-8px_-8px_16px_#252a32]
                     transition-all
                   "
                 >

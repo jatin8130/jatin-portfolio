@@ -40,13 +40,16 @@ const Contact = () => {
     setStatus({ type: "", message: "" });
 
     try {
-      const res = await fetch("https://jatin-portfolio-server.vercel.app/send-mail", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        "https://jatin-portfolio-server.vercel.app/send-mail",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       const data = await res.json();
 
@@ -83,39 +86,68 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="bg-[#ECF0F3] pt-10 pb-20 scroll-mt-24">
-      <div className="max-w-7xl mx-auto px-3">
-        {/* Heading */}
+    <section
+      id="contact"
+      className="
+  relative overflow-hidden
+  bg-[#0D0B10]
+  py-16 md:py-20
+  before:absolute before:inset-0
+  before:bg-[radial-gradient(ellipse_at_0%_50%,rgba(255,1,79,0.16),transparent_45%),radial-gradient(ellipse_at_100%_50%,rgba(255,1,79,0.10),transparent_45%),radial-gradient(ellipse_at_50%_100%,rgba(70,45,90,0.10),transparent_55%)]
+  before:pointer-events-none
+"
+    >
+      <div className="max-w-7xl mx-auto px-5">
+        {/* ================= HEADING ================= */}
 
-        <div className="text-center mb-14 px-2">
-          <p className="uppercase tracking-[5px] text-[#FF014F] text-sm font-semibold">
+        <div className="text-center max-w-3xl mx-auto mb-14 md:mb-20">
+          <p className="uppercase tracking-[5px] text-[#FF014F] text-xs md:text-sm font-bold">
             Get In Touch
           </p>
 
-          <h2 className="text-3xl md:text-5xl font-bold text-[#1E2125] mt-3">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mt-4">
             {`Let's Build Something Great`}
           </h2>
 
-          <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
+          <p className="text-gray-400 mt-5 text-sm md:text-base leading-7">
             Looking for a Full Stack Developer for your next project or
             {`opportunity? I'd love to hear from you.`}
           </p>
         </div>
 
         <div className="grid lg:grid-cols-[0.9fr_1.2fr] gap-8 items-start">
-          {/* LEFT CARD */}
+          {/* ================= LEFT CARD ================= */}
 
-          <div className="rounded-[30px] bg-[#ECF0F3] p-6 shadow-[12px_12px_28px_#c8d0e7,-12px_-12px_28px_#ffffff]">
-            <div className="overflow-hidden rounded-2xl">
+          <div
+            className="
+              rounded-[30px]
+              bg-[#15181D]
+              p-6
+              border border-white/5
+              shadow-[10px_10px_22px_#08090c,-8px_-8px_20px_#1d2128]
+            "
+          >
+            {/* Image */}
+
+            <div className="overflow-hidden rounded-[22px]">
               <img
                 src="/image/contact1.png"
                 alt="Jatin Mehra"
-                className="w-full h-72 object-cover hover:scale-105 transition duration-500"
+                className="
+                  w-full
+                  h-72
+                  object-cover
+                  hover:scale-105
+                  transition
+                  duration-500
+                "
               />
             </div>
 
+            {/* Profile */}
+
             <div className="mt-8">
-              <h3 className="text-3xl font-bold text-[#1E2125]">
+              <h3 className="text-3xl font-bold text-white">
                 Jatin Mehra
               </h3>
 
@@ -123,19 +155,33 @@ const Contact = () => {
                 Full Stack Developer • 2+ Years Experience
               </p>
 
-              <p className="text-gray-600 leading-7 text-[15px] mt-6">
-                {`I develop modern, scalable web applications using React,
+              <p className="text-gray-400 leading-7 text-[15px] mt-6">
+                I develop modern, scalable web applications using React,
                 Next.js, Node.js, Express.js, MongoDB, Redis, Docker and AWS.
                 I'm currently available for full-time opportunities and
-                freelance collaborations.`}
+                freelance collaborations.
               </p>
             </div>
 
-            {/* Contact Details */}
+            {/* ================= CONTACT DETAILS ================= */}
 
             <div className="mt-8 space-y-5">
+              {/* Email */}
+
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#ECF0F3] shadow-[5px_5px_12px_#c8d0e7,-5px_-5px_12px_#ffffff] flex items-center justify-center">
+                <div
+                  className="
+                    w-12
+                    h-12
+                    rounded-xl
+                    bg-[#15181D]
+                    border border-white/5
+                    shadow-[5px_5px_12px_#08090c,-5px_-5px_12px_#1d2128]
+                    flex
+                    items-center
+                    justify-center
+                  "
+                >
                   <Mail size={20} className="text-[#FF014F]" />
                 </div>
 
@@ -144,14 +190,28 @@ const Contact = () => {
                     Email
                   </p>
 
-                  <p className="font-medium text-[#1E2125] break-all">
+                  <p className="font-medium text-gray-200 break-all">
                     jatintechsunset@gmail.com
                   </p>
                 </div>
               </div>
 
+              {/* WhatsApp */}
+
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#ECF0F3] shadow-[5px_5px_12px_#c8d0e7,-5px_-5px_12px_#ffffff] flex items-center justify-center">
+                <div
+                  className="
+                    w-12
+                    h-12
+                    rounded-xl
+                    bg-[#15181D]
+                    border border-white/5
+                    shadow-[5px_5px_12px_#08090c,-5px_-5px_12px_#1d2128]
+                    flex
+                    items-center
+                    justify-center
+                  "
+                >
                   <Phone size={20} className="text-[#25D366]" />
                 </div>
 
@@ -160,14 +220,28 @@ const Contact = () => {
                     WhatsApp
                   </p>
 
-                  <p className="font-medium text-[#1E2125]">
+                  <p className="font-medium text-gray-200">
                     +91 8130163436
                   </p>
                 </div>
               </div>
 
+              {/* Location */}
+
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#ECF0F3] shadow-[5px_5px_12px_#c8d0e7,-5px_-5px_12px_#ffffff] flex items-center justify-center">
+                <div
+                  className="
+                    w-12
+                    h-12
+                    rounded-xl
+                    bg-[#15181D]
+                    border border-white/5
+                    shadow-[5px_5px_12px_#08090c,-5px_-5px_12px_#1d2128]
+                    flex
+                    items-center
+                    justify-center
+                  "
+                >
                   <MapPin size={20} className="text-[#FF014F]" />
                 </div>
 
@@ -176,22 +250,37 @@ const Contact = () => {
                     Location
                   </p>
 
-                  <p className="font-medium text-[#1E2125]">
+                  <p className="font-medium text-gray-200">
                     Bengaluru, India
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* WhatsApp Button */}
+            {/* ================= WHATSAPP BUTTON ================= */}
 
             <a
               href="https://wa.me/918130163436?text=Hi%20Jatin,%20I'd%20like%20to%20connect."
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-10 flex items-center justify-center gap-3 w-full py-4 rounded-2xl text-white font-semibold transition-all duration-300 hover:-translate-y-1"
+              className="
+                mt-10
+                flex
+                items-center
+                justify-center
+                gap-3
+                w-full
+                py-4
+                rounded-2xl
+                text-white
+                font-semibold
+                transition-all
+                duration-300
+                hover:-translate-y-1
+              "
               style={{
-                background: "linear-gradient(135deg,#25D366,#16A34A)",
+                background:
+                  "linear-gradient(135deg,#25D366,#16A34A)",
                 boxShadow:
                   "0 0 18px rgba(37,211,102,.35),0 0 35px rgba(37,211,102,.18)",
               }}
@@ -201,22 +290,35 @@ const Contact = () => {
             </a>
           </div>
 
-          {/* RIGHT CARD */}
+          {/* ================= RIGHT CARD ================= */}
 
-          <div className="rounded-[30px] bg-[#ECF0F3] p-6 md:p-8 shadow-[12px_12px_28px_#c8d0e7,-12px_-12px_28px_#ffffff]">
+          <div
+            className="
+              rounded-[30px]
+              bg-[#15181D]
+              p-6
+              md:p-8
+              border border-white/5
+              shadow-[10px_10px_22px_#08090c,-8px_-8px_20px_#1d2128]
+            "
+          >
             <div className="mb-8">
-              <h3 className="text-2xl font-bold text-[#1E2125]">
+              <h3 className="text-2xl font-bold text-white">
                 Send a Message
               </h3>
 
-              <p className="text-gray-500 mt-2">
-                {`I'll receive your message directly in my inbox.`}
+              <p className="text-gray-400 mt-2">
+                I'll receive your message directly in my inbox.
               </p>
             </div>
 
+            {/* ================= FORM ================= */}
+
             <form onSubmit={sendMessage} className="space-y-6">
+              {/* Name */}
+
               <div>
-                <label className="uppercase tracking-[3px] text-xs text-gray-600 block mb-3">
+                <label className="uppercase tracking-[3px] text-xs text-gray-400 block mb-3">
                   Name
                 </label>
 
@@ -226,12 +328,27 @@ const Contact = () => {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full h-14 px-5 rounded-xl bg-[#ECF0F3] border border-gray-300 shadow-[inset_4px_4px_8px_#d1d9e6,inset_-4px_-4px_8px_#ffffff] focus:border-[#FF014F] focus:outline-none transition"
+                  className="
+                    w-full
+                    h-14
+                    px-5
+                    rounded-xl
+                    bg-[#111419]
+                    border border-white/5
+                    text-white
+                    placeholder:text-gray-600
+                    shadow-[inset_4px_4px_9px_#08090c,inset_-4px_-4px_9px_#1d2128]
+                    focus:border-[#FF014F]
+                    focus:outline-none
+                    transition
+                  "
                 />
               </div>
 
+              {/* Phone */}
+
               <div>
-                <label className="uppercase tracking-[3px] text-xs text-gray-600 block mb-3">
+                <label className="uppercase tracking-[3px] text-xs text-gray-400 block mb-3">
                   WhatsApp Number
                 </label>
 
@@ -242,12 +359,27 @@ const Contact = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="+91 9876543210"
-                  className="w-full h-14 px-5 rounded-xl bg-[#ECF0F3] border border-gray-300 shadow-[inset_4px_4px_8px_#d1d9e6,inset_-4px_-4px_8px_#ffffff] focus:border-[#FF014F] focus:outline-none transition"
+                  className="
+                    w-full
+                    h-14
+                    px-5
+                    rounded-xl
+                    bg-[#111419]
+                    border border-white/5
+                    text-white
+                    placeholder:text-gray-600
+                    shadow-[inset_4px_4px_9px_#08090c,inset_-4px_-4px_9px_#1d2128]
+                    focus:border-[#FF014F]
+                    focus:outline-none
+                    transition
+                  "
                 />
               </div>
 
+              {/* Message */}
+
               <div>
-                <label className="uppercase tracking-[3px] text-xs text-gray-600 block mb-3">
+                <label className="uppercase tracking-[3px] text-xs text-gray-400 block mb-3">
                   Message
                 </label>
 
@@ -257,29 +389,51 @@ const Contact = () => {
                   required
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-5 py-4 rounded-xl resize-none bg-[#ECF0F3] border border-gray-300 shadow-[inset_4px_4px_8px_#d1d9e6,inset_-4px_-4px_8px_#ffffff] focus:border-[#FF014F] focus:outline-none transition"
+                  className="
+                    w-full
+                    px-5
+                    py-4
+                    rounded-xl
+                    resize-none
+                    bg-[#111419]
+                    border border-white/5
+                    text-white
+                    placeholder:text-gray-600
+                    shadow-[inset_4px_4px_9px_#08090c,inset_-4px_-4px_9px_#1d2128]
+                    focus:border-[#FF014F]
+                    focus:outline-none
+                    transition
+                  "
                 />
               </div>
+
+              {/* Status */}
 
               {status.message && (
                 <div
                   className={`rounded-xl p-4 flex items-start gap-3 ${
                     status.type === "success"
-                      ? "bg-green-50 border border-green-200"
-                      : "bg-red-50 border border-red-200"
+                      ? "bg-green-500/10 border border-green-500/20"
+                      : "bg-red-500/10 border border-red-500/20"
                   }`}
                 >
                   {status.type === "success" ? (
-                    <CheckCircle2 size={22} className="text-green-500" />
+                    <CheckCircle2
+                      size={22}
+                      className="text-green-400"
+                    />
                   ) : (
-                    <AlertCircle size={22} className="text-red-500" />
+                    <AlertCircle
+                      size={22}
+                      className="text-red-400"
+                    />
                   )}
 
                   <p
                     className={`text-sm ${
                       status.type === "success"
-                        ? "text-green-700"
-                        : "text-red-700"
+                        ? "text-green-400"
+                        : "text-red-400"
                     }`}
                   >
                     {status.message}
@@ -287,10 +441,34 @@ const Contact = () => {
                 </div>
               )}
 
+              {/* Submit Button */}
+
               <button
                 type="submit"
                 disabled={loading}
-                className="group w-full h-14 rounded-xl font-semibold uppercase tracking-[3px] bg-[#ECF0F3] text-[#1E2125] shadow-[8px_8px_18px_#c8d0e7,-8px_-8px_18px_#ffffff] hover:-translate-y-1 hover:text-[#FF014F] transition-all duration-300 disabled:opacity-70 flex items-center justify-center gap-3"
+                className="
+                  group
+                  w-full
+                  h-14
+                  rounded-xl
+                  font-semibold
+                  uppercase
+                  tracking-[3px]
+                  bg-[#15181D]
+                  border border-white/5
+                  text-white
+                  shadow-[8px_8px_18px_#08090c,-8px_-8px_18px_#1d2128]
+                  hover:-translate-y-1
+                  hover:text-[#FF014F]
+                  hover:shadow-[10px_10px_22px_#08090c,-10px_-10px_22px_#252a32]
+                  transition-all
+                  duration-300
+                  disabled:opacity-70
+                  flex
+                  items-center
+                  justify-center
+                  gap-3
+                "
               >
                 {loading ? (
                   <>
@@ -309,44 +487,79 @@ const Contact = () => {
               </button>
             </form>
 
-            {/* Fills Empty Space */}
+            {/* ================= WHY WORK WITH ME ================= */}
 
-            <div className="mt-10 pt-8 border-t border-gray-300">
+            <div className="mt-10 pt-8 border-t border-white/10">
               <div className="flex items-center gap-2 mb-6">
-                <Sparkles size={18} className="text-[#FF014F]" />
+                <Sparkles
+                  size={18}
+                  className="text-[#FF014F]"
+                />
 
-                <h4 className="text-xl font-bold text-[#1E2125]">
+                <h4 className="text-xl font-bold text-white">
                   Why Work With Me
                 </h4>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-4">
-                <div className="rounded-2xl p-4 bg-[#ECF0F3] shadow-[6px_6px_14px_#c8d0e7,-6px_-6px_14px_#ffffff]">
-                  <Briefcase size={22} className="text-[#FF014F] mb-3" />
+                {/* Production Experience */}
 
-                  <h5 className="font-semibold text-[#1E2125]">
+                <div
+                  className="
+                    rounded-2xl
+                    p-4
+                    bg-[#111419]
+                    border border-white/5
+                    shadow-[6px_6px_14px_#08090c,-6px_-6px_14px_#1d2128]
+                    hover:-translate-y-1
+                    hover:shadow-[8px_8px_18px_#08090c,-8px_-8px_18px_#252a32]
+                    transition-all
+                  "
+                >
+                  <Briefcase
+                    size={22}
+                    className="text-[#FF014F] mb-3"
+                  />
+
+                  <h5 className="font-semibold text-white">
                     Production Experience
                   </h5>
 
-                  <p className="text-sm text-gray-600 mt-1">
+                  <p className="text-sm text-gray-400 mt-1">
                     2+ years building real client projects.
                   </p>
                 </div>
 
-                <div className="rounded-2xl p-4 bg-[#ECF0F3] shadow-[6px_6px_14px_#c8d0e7,-6px_-6px_14px_#ffffff]">
-                  <MessageCircle size={22} className="text-[#25D366] mb-3" />
+                {/* Opportunities */}
 
-                  <h5 className="font-semibold text-[#1E2125]">
+                <div
+                  className="
+                    rounded-2xl
+                    p-4
+                    bg-[#111419]
+                    border border-white/5
+                    shadow-[6px_6px_14px_#08090c,-6px_-6px_14px_#1d2128]
+                    hover:-translate-y-1
+                    hover:shadow-[8px_8px_18px_#08090c,-8px_-8px_18px_#252a32]
+                    transition-all
+                  "
+                >
+                  <MessageCircle
+                    size={22}
+                    className="text-[#25D366] mb-3"
+                  />
+
+                  <h5 className="font-semibold text-white">
                     Open to Opportunities
                   </h5>
 
-                  <p className="text-sm text-gray-600 mt-1">
+                  <p className="text-sm text-gray-400 mt-1">
                     Full-time and remote collaborations.
                   </p>
                 </div>
               </div>
 
-              {/* Tech Chips */}
+              {/* ================= TECH CHIPS ================= */}
 
               <div className="mt-8">
                 <p className="uppercase tracking-[3px] text-xs text-gray-500 mb-3">
@@ -363,11 +576,23 @@ const Contact = () => {
                     "CI/CD",
                     "Docker",
                     "AWS",
-                    "Jira"
+                    "Jira",
                   ].map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-2 rounded-full text-xs font-medium bg-[#ECF0F3] text-gray-700 shadow-[3px_3px_8px_#c8d0e7,-3px_-3px_8px_#ffffff]"
+                      className="
+                        px-3
+                        py-2
+                        rounded-full
+                        text-xs
+                        font-medium
+                        bg-[#15181D]
+                        text-gray-400
+                        border border-white/5
+                        shadow-[3px_3px_8px_#08090c,-3px_-3px_8px_#1d2128]
+                        hover:text-[#FF014F]
+                        transition-colors
+                      "
                     >
                       {tech}
                     </span>
