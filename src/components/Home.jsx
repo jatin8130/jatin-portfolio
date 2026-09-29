@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const skills = [
-  { name: "Gen AI", icon: "/image/ai.png" },
+  { name: "Gen AI", icon: "/image/ai.webp" },
   {
     name: "JavaScript",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
@@ -94,7 +94,7 @@ const Home = () => {
         className="
   relative overflow-hidden
   bg-[#0D0B10]
-  pt-5 md:pt-8 pb-10
+  pt-6 md:pt-8 pb-10
   before:absolute before:inset-0
   before:bg-[radial-gradient(ellipse_at_0%_50%,rgba(255,1,79,0.16),transparent_45%),radial-gradient(ellipse_at_100%_50%,rgba(255,1,79,0.10),transparent_45%),radial-gradient(ellipse_at_50%_100%,rgba(70,45,90,0.10),transparent_55%)]
   before:pointer-events-none
@@ -154,7 +154,7 @@ const Home = () => {
                 >
                   <div className="relative overflow-hidden rounded-[28px]">
                     <img
-                      src="/image/photo.png"
+                      src="/image/photo.webp"
                       alt="Jatin Mehra"
                       className="
                         w-[390px]

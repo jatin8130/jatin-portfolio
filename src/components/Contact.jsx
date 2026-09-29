@@ -131,7 +131,7 @@ const Contact = () => {
 
             <div className="overflow-hidden rounded-[22px]">
               <img
-                src="/image/contact1.png"
+                src="/image/contact1.webp"
                 alt="Jatin Mehra"
                 className="
                   w-full
@@ -156,10 +156,10 @@ const Contact = () => {
               </p>
 
               <p className="text-gray-400 leading-7 text-[15px] mt-6">
-                I develop modern, scalable web applications using React,
+                {`I develop modern, scalable web applications using React,
                 Next.js, Node.js, Express.js, MongoDB, Redis, Docker and AWS.
                 I'm currently available for full-time opportunities and
-                freelance collaborations.
+                freelance collaborations.`}
               </p>
             </div>
 
@@ -308,7 +308,7 @@ const Contact = () => {
               </h3>
 
               <p className="text-gray-400 mt-2">
-                I'll receive your message directly in my inbox.
+                {`I'll receive your message directly in my inbox.`}
               </p>
             </div>
 
@@ -329,19 +329,23 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   className="
-                    w-full
-                    h-14
-                    px-5
-                    rounded-xl
-                    bg-[#111419]
-                    border border-white/5
-                    text-white
-                    placeholder:text-gray-600
-                    shadow-[inset_4px_4px_9px_#08090c,inset_-4px_-4px_9px_#1d2128]
-                    focus:border-[#FF014F]
-                    focus:outline-none
-                    transition
-                  "
+  w-full
+  h-14
+  px-5
+  rounded-xl
+  bg-[#111419]
+  border border-white/5
+  text-white
+  placeholder:text-gray-600
+  shadow-[inset_4px_4px_9px_#08090c,inset_-4px_-4px_9px_#1d2128]
+  focus:border-[#FF014F]
+  focus:outline-none
+  transition
+  [-webkit-text-fill-color:white]
+  [-webkit-box-shadow:inset_4px_4px_9px_#08090c,inset_-4px_-4px_9px_#1d2128]
+  autofill:[-webkit-text-fill-color:white]
+  autofill:[-webkit-box-shadow:inset_0_0_0px_1000px_#111419]
+"
                 />
               </div>
 
@@ -358,21 +362,24 @@ const Contact = () => {
                   required
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="+91 9876543210"
                   className="
-                    w-full
-                    h-14
-                    px-5
-                    rounded-xl
-                    bg-[#111419]
-                    border border-white/5
-                    text-white
-                    placeholder:text-gray-600
-                    shadow-[inset_4px_4px_9px_#08090c,inset_-4px_-4px_9px_#1d2128]
-                    focus:border-[#FF014F]
-                    focus:outline-none
-                    transition
-                  "
+  w-full
+  h-14
+  px-5
+  rounded-xl
+  bg-[#111419]
+  border border-white/5
+  text-white
+  placeholder:text-gray-600
+  shadow-[inset_4px_4px_9px_#08090c,inset_-4px_-4px_9px_#1d2128]
+  focus:border-[#FF014F]
+  focus:outline-none
+  transition
+  [-webkit-text-fill-color:white]
+  [-webkit-box-shadow:inset_4px_4px_9px_#08090c,inset_-4px_-4px_9px_#1d2128]
+  autofill:[-webkit-text-fill-color:white]
+  autofill:[-webkit-box-shadow:inset_0_0_0px_1000px_#111419]
+"
                 />
               </div>
 
@@ -411,11 +418,10 @@ const Contact = () => {
 
               {status.message && (
                 <div
-                  className={`rounded-xl p-4 flex items-start gap-3 ${
-                    status.type === "success"
-                      ? "bg-green-500/10 border border-green-500/20"
-                      : "bg-red-500/10 border border-red-500/20"
-                  }`}
+                  className={`rounded-xl p-4 flex items-start gap-3 ${status.type === "success"
+                    ? "bg-green-500/10 border border-green-500/20"
+                    : "bg-red-500/10 border border-red-500/20"
+                    }`}
                 >
                   {status.type === "success" ? (
                     <CheckCircle2
@@ -430,11 +436,10 @@ const Contact = () => {
                   )}
 
                   <p
-                    className={`text-sm ${
-                      status.type === "success"
-                        ? "text-green-400"
-                        : "text-red-400"
-                    }`}
+                    className={`text-sm ${status.type === "success"
+                      ? "text-green-400"
+                      : "text-red-400"
+                      }`}
                   >
                     {status.message}
                   </p>

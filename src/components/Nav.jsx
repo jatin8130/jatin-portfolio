@@ -123,7 +123,7 @@ const Nav = () => {
                   "
                 >
                   <img
-                    src="/image/photo.png"
+                    src="/image/photo.webp"
                     alt="Jatin Mehra"
                     className="w-full h-full object-cover"
                   />
@@ -245,7 +245,7 @@ const Nav = () => {
                   "
                 >
                   <img
-                    src="/image/photo.png"
+                    src="/image/photo.webp"
                     alt="Jatin Mehra"
                     className="w-full h-full object-cover"
                   />

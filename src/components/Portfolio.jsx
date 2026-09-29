@@ -6,7 +6,6 @@ import {
   LayoutDashboard,
   Server,
   Database,
-  ChevronDown,
 } from "lucide-react";
 
 const projects = [
@@ -18,8 +17,8 @@ const projects = [
     description:
       "CRM software used to manage customers, leads, sales, and customer interactions in one place.",
     skills: ["React", "Next.js", "Node.js", "Express", "MongoDB"],
-    image: "/image/project1.PNG",
-    scrollImage: "/image/projectscroll1.png",
+    image: "/image/project1.webp",
+    scrollImage: "/image/projectscroll1.webp",
     live: "https://crm.techsunset.com",
 
     frontend: [
@@ -54,8 +53,8 @@ const projects = [
     description:
       "Accounting and invoicing software used to manage invoices, payments, expenses, customers, vendors, GST, and financial reports.",
     skills: ["React", "Next.js", "Node.js", "Express", "MongoDB"],
-    image: "/image/project2.PNG",
-    scrollImage: "/image/projectscroll2.png",
+    image: "/image/project2.webp",
+    scrollImage: "/image/projectscroll2.webp",
     live: "https://books.techsunset.com",
 
     frontend: [
@@ -90,8 +89,8 @@ const projects = [
     description:
       "Human Resource management software used to manage employees, attendance, leaves, onboarding, departments, holidays, and HR reports.",
     skills: ["React", "Next.js", "Node.js", "Express", "MongoDB"],
-    image: "/image/project3.PNG",
-    scrollImage: "/image/projectscroll3.png",
+    image: "/image/project3.webp",
+    scrollImage: "/image/projectscroll3.webp",
     live: "https://hr.techsunset.com",
 
     frontend: [
@@ -128,8 +127,8 @@ const projects = [
     description:
       "Inventory management software used to manage products, stock, orders, suppliers, warehouses, and fulfillment.",
     skills: ["React", "Next.js", "Node.js", "Express", "MongoDB"],
-    image: "/image/project4.PNG",
-    scrollImage: "/image/projectscroll4.png",
+    image: "/image/project4.webp",
+    scrollImage: "/image/projectscroll4.webp",
     live: "https://inventory.techsunset.com",
 
     frontend: [
@@ -166,8 +165,8 @@ const projects = [
     description:
       "Project and task management software used to manage projects, tasks, deadlines, milestones, team workload, and progress.",
     skills: ["React", "Next.js", "Node.js", "Express", "MongoDB"],
-    image: "/image/project5.PNG",
-    scrollImage: "/image/projectscroll5.png",
+    image: "/image/project5.webp",
+    scrollImage: "/image/projectscroll5.webp",
     live: "https://project.techsunset.com",
 
     frontend: [
@@ -204,8 +203,8 @@ const projects = [
     description:
       "School management system used to manage admissions, students, attendance, fees, exams, staff, communication, and school operations.",
     skills: ["React", "Next.js", "Node.js", "Express", "MongoDB"],
-    image: "/image/project6.PNG",
-    scrollImage: "/image/projectscroll6.png",
+    image: "/image/project6.webp",
+    scrollImage: "/image/projectscroll6.webp",
     live: "https://tscampus.com",
 
     frontend: [
@@ -240,9 +239,6 @@ const projects = [
 export default function Portfolio() {
   const [selectedProject, setSelectedProject] = useState(null);
 
-  // Initially show only 3 projects
-  const [visibleCount, setVisibleCount] = useState(3);
-
   const openDetails = (project) => {
     setSelectedProject(project);
     document.body.style.overflow = "hidden";
@@ -258,15 +254,6 @@ export default function Portfolio() {
       document.body.style.overflow = "";
     };
   }, []);
-
-  // Show remaining 3 projects
-  const handleShowMore = () => {
-    setVisibleCount(projects.length);
-  };
-
-  const visibleProjects = projects.slice(0, visibleCount);
-
-  const allProjectsVisible = visibleCount >= projects.length;
 
   return (
     <>
@@ -301,7 +288,7 @@ export default function Portfolio() {
 
           {/* ================= PROJECT GRID ================= */}
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
-            {visibleProjects.map((project) => (
+            {projects.map((project) => (
               <article
                 key={project.id}
                 className="
@@ -493,38 +480,6 @@ export default function Portfolio() {
                 </div>
               </article>
             ))}
-          </div>
-
-          {/* ================= SHOW MORE ================= */}
-          <div className="flex justify-center mt-10 md:mt-12">
-            {!allProjectsVisible && (
-              <button
-                type="button"
-                onClick={handleShowMore}
-                className="
-                  flex items-center gap-2
-                  px-7 md:px-8
-                  py-3 md:py-3.5
-                  rounded-full
-                  bg-[#171A1D]
-                  text-[#F5F5F5]
-                  text-sm
-                  font-semibold
-                  border border-[#2A2F34]
-                  shadow-[7px_7px_16px_#0a0c0e,-7px_-7px_16px_#1d2124]
-                  hover:text-[#FF014F]
-                  hover:-translate-y-1
-                  transition-all duration-300
-                "
-              >
-                Show More Projects
-
-                <ChevronDown
-                  size={17}
-                  className="transition-transform duration-300"
-                />
-              </button>
-            )}
           </div>
         </div>
       </section>
@@ -1002,6 +957,7 @@ export default function Portfolio() {
               hover:shadow-[0_15px_40px_rgba(255,1,79,0.32)]
               transition-all
               duration-300
+              py-4
             "
           >
             <span

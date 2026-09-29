@@ -14,7 +14,7 @@ const blogs = [
     title: "Software Product Development",
     date: "Jan 2027",
     read: "6 min read",
-    image: "/image/software.png",
+    image: "/image/software.webp",
 
     intro:
       "Software Product Development is the complete process of transforming an idea into a production-ready digital product. It combines strategy, design, engineering, testing and deployment into one continuous development lifecycle.",
@@ -47,7 +47,7 @@ const blogs = [
     title: "Enterprise Development",
     date: "Jan 2027",
     read: "7 min read",
-    image: "/image/enterprise.png",
+    image: "/image/enterprise.webp",
 
     intro:
       "Enterprise applications are designed to support large organizations, complex workflows and potentially thousands of users simultaneously. Reliability, security and scalability are fundamental requirements.",
@@ -81,7 +81,7 @@ const blogs = [
     title: "Server Scalability",
     date: "Jan 2027",
     read: "5 min read",
-    image: "/image/server.png",
+    image: "/image/server.webp",
 
     intro:
       "Server scalability allows an application to handle increasing traffic and workloads without significantly reducing performance or reliability.",
@@ -115,7 +115,7 @@ const blogs = [
     title: "Cloud Infrastructure For Software",
     date: "Jan 2027",
     read: "8 min read",
-    image: "/image/cloud.png",
+    image: "/image/cloud.webp",
 
     intro:
       "Cloud infrastructure provides the foundation required to deploy, operate and scale modern software applications across reliable and globally distributed environments.",
@@ -149,7 +149,7 @@ const blogs = [
     title: "AI and Machine Learning",
     date: "Jan 2027",
     read: "6 min read",
-    image: "/image/aiandml.png",
+    image: "/image/aiandml.webp",
 
     intro:
       "Artificial Intelligence is becoming an important part of modern software development, enabling applications to understand information, automate workflows and provide intelligent user experiences.",
