@@ -11,7 +11,7 @@ import Blog from './components/Blog'
 const App = () => {
   useEffect(() => {
     const link = document.createElement("a");
-    link.href = "/image/Jatin-Mehra-Resume.pdf";
+    link.href = "/image/jatin-mehra-resume.pdf";
     link.download = "Jatin-Mehra-Resume.pdf";
 
     document.body.appendChild(link);
