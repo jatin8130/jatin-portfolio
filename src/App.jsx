@@ -1,4 +1,5 @@
 import 'remixicon/fonts/remixicon.css'
+import { useEffect } from "react";
 import Nav from './components/Nav'
 import Home from './components/Home'
 import Portfolio from './components/Portfolio'
@@ -8,6 +9,16 @@ import FloatingWhatsApp from './components/FloatingWhatsApp'
 import Blog from './components/Blog'
 
 const App = () => {
+  useEffect(() => {
+    const link = document.createElement("a");
+    link.href = "/image/Jatin-Mehra-Resume.pdf";
+    link.download = "Jatin-Mehra-Resume.pdf";
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }, []);
+
   return (
     <div
       className="min-h-screen"
