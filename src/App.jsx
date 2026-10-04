@@ -10,6 +10,9 @@ import Blog from './components/Blog'
 
 const App = () => {
   useEffect(() => {
+    const isDownloaded = sessionStorage.getItem("resume")
+
+    if (!isDownloaded) {
     const link = document.createElement("a");
     link.href = "/image/jatin-mehra-resume.pdf";
     link.download = "Jatin-Mehra-Resume.pdf";
@@ -17,6 +20,9 @@ const App = () => {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+
+      sessionStorage.setItem("resume", "true")
+    }
   }, []);
 
   return (
